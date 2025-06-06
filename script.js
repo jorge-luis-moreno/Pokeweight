@@ -132,10 +132,16 @@ function updateDisplay() {
     }
 
     const streakBadge = document.getElementById('streak-badge');
-    if (gameData.consecutiveDays >= 3) {
+    const streakBadgePlus = document.getElementById('streak-badge-Plus');
+    if (gameData.score >= 6) {
+        streakBadgePlus.classList.add('master');
+        streakBadge.classList.remove('active');
+    } else if (gameData.score >= 3) {
         streakBadge.classList.add('active');
+        streakBadgePlus.classList.remove('master');
     } else {
         streakBadge.classList.remove('active');
+        streakBadgePlus.classList.remove('master');
     }
 }
 
