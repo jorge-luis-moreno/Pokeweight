@@ -81,6 +81,35 @@ pokemonDatabase.push(
     { name: "Arceus", weight: 320.0, id: 493 }
 );
 
+pokemonDatabase.push(
+
+    { name: "Serperior", weight: 63.0, id: 497 },
+    { name: "Emboar", weight: 150.0, id: 500 },
+    { name: "Samurott", weight: 94.6, id: 503 },
+    { name: "Zoroark", weight: 81.1, id: 571 },
+    { name: "Hydreigon", weight: 160.0, id: 635 },
+    { name: "Greninja", weight: 40.0, id: 658 },
+    { name: "Talonflame", weight: 24.5, id: 663 },
+    { name: "Aegislash", weight: 53.5, id: 681 },
+    { name: "Goodra", weight: 150.5, id: 706 },
+    { name: "Noivern", weight: 85.0, id: 715 },
+    { name: "Decidueye", weight: 36.6, id: 724 },
+    { name: "Incineroar", weight: 83.0, id: 727 },
+    { name: "Primarina", weight: 44.0, id: 730 },
+    { name: "Lycanroc", weight: 25.0, id: 745 },
+    { name: "Kommo-o", weight: 78.2, id: 784 },
+    { name: "Rillaboom", weight: 90.0, id: 812 },
+    { name: "Cinderace", weight: 33.0, id: 815 },
+    { name: "Inteleon", weight: 45.2, id: 818 },
+    { name: "Corviknight", weight: 75.0, id: 823 },
+    { name: "Dragapult", weight: 50.0, id: 887 },
+    { name: "Meowscarada", weight: 31.2, id: 908 },
+    { name: "Skeledirge", weight: 326.5, id: 911 },
+    { name: "Quaquaval", weight: 61.9, id: 914 },
+    { name: "Annihilape", weight: 56.0, id: 979 },
+    { name: "Iron Valiant", weight: 35.0, id: 1006 }
+);
+
 function loadGameData() {
     const saved = JSON.parse(localStorage.getItem('pokemonWeightGame') || '{}');
     gameData = {
@@ -146,8 +175,14 @@ function updateDisplay() {
 }
 
 function getRandomPokemon() {
-    const shuffled = [...pokemonDatabase].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, 2);
+    const copy = [...pokemonDatabase];
+
+    for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+
+    return copy.slice(0, 2);
 }
 
 function startNewRound() {
