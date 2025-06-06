@@ -27,6 +27,7 @@
      font-size: 2.5rem;
      margin-bottom: 10px;
      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+     text-align: center;
  }
 
  .stats {
@@ -45,9 +46,7 @@
  }
 
  .img-logo {
-     position: absolute;
-     top: -5px;
-     left: 1px;
+     text-align: center;
  }
 
  .stat-value {
@@ -245,17 +244,18 @@
  }
 
  .restart-btn {
-     background: linear-gradient(45deg, #161616, #121212);
+     background: linear-gradient(45deg, #be3636, #920e0e);
      color: white;
      border: none;
      padding: 15px 30px;
      border-radius: 25px;
-
      font-size: 1.1rem;
      font-weight: bold;
      cursor: pointer;
      transition: all 0.3s ease;
      margin-top: 15px;
+     outline: rgb(236, 2, 2);
+     outline-style: solid;
  }
 
  .restart-btn:hover {
