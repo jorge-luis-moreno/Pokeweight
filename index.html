@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué Pokémon Pesa Más?</title>
+    <style> </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>⚖️ ¿Qué Pokémon Pesa Más? ⚖️</h1>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value" id="score">0</div>
+                <div class="stat-label">Puntuación</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="wins-today">0</div>
+                <div class="stat-label">Victorias Hoy</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="consecutive-days">0</div>
+                <div class="stat-label">Días Consecutivos</div>
+            </div>
+        </div>
+    </div>
+    <div class=" img-logo">
+        <img src="ChatGPT Image 4 jun 2025, 07_21_37 p.m..png" alt="logo" width="220" height="200">
+    </div>
+
+    <div class="streak-badge" id="streak-badge">
+        🔥 ¡ESTAS EN LLAMAS CHAVAL! 🔥
+    </div>
+
+    <div class="game-container">
+        <div class="loading" id="loading">
+            <img src="snorlax-snorlax.gif" alt="snorlax-loading" width="170" height="150">
+        </div>
+
+        <div id="game-content" style="display: none;">
+            <div class="question">
+                ¿Cuál de estos Pokémon pesa más?
+            </div>
+
+            <div class="pokemon-comparison">
+                <div class="pokemon-card" id="pokemon1" onclick="selectPokemon(0)">
+                    <div class="pokemon-sprite" id="sprite1">🎯</div>
+                    <div class="pokemon-name" id="name1">Pokémon 1</div>
+                    <div class="pokemon-weight" id="weight1">? kg</div>
+                </div>
+
+                <div class="vs-text">VS</div>
+
+                <div class="pokemon-card" id="pokemon2" onclick="selectPokemon(1)">
+                    <div class="pokemon-sprite" id="sprite2">🎯</div>
+                    <div class="pokemon-name" id="name2">Pokémon 2</div>
+                    <div class="pokemon-weight" id="weight2">? kg</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-over" id="game-over">
+            <h2>😎 ¡Juego Completado! 😎</h2>
+            <p id="final-message">¡Felicitaciones! Has completado el desafío.</p>
+            <button class="restart-btn" onclick="restartGame()">Jugar Otra Vez</button>
+        </div>
+    </div>
+
+    <script src=script.js>   </script>
+</body>
+
+</html>
