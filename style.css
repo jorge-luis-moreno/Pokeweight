@@ -142,7 +142,6 @@
      color: #FFD700;
      font-weight: bold;
      opacity: 0;
-     transition: opacity 0.5s ease;
  }
 
  .pokemon-weight.revealed {
